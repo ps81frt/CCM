@@ -2,6 +2,7 @@
 
 			auditpol /set /subcategory:"Événements Plug-and-Play" /success:enable
 			auditpol /set /option:CrashOnAuditFail /value:enable
+			gpupdate /force
 
 ### * Lorsqu'un nouveau périphérique USB ou Plug and Play est connecté, Windows installe un pilote.
 
