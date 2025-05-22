@@ -11,14 +11,13 @@
 
 Installation & Mise a jours de Powershell 7
 >------------------------------------------------------------------------------------------------------------------------------------------
-'''powershell
 
 
-$PSVersionTable.PSVersion
-iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
-dotnet tool update --global PowerShell
-$PSVersionTable
-'''
+      $PSVersionTable.PSVersion
+      iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+      dotnet tool update --global PowerShell
+      $PSVersionTable
+
 
 
                                 
