@@ -140,8 +140,6 @@ Write-Output "Computer Display Info"
 
 wmic desktopmonitor get Caption,MonitorType,MonitorManufacturer,Name
 Start-Sleep -Seconds 2
-Write-Host "Computer Disk Info" -ForegroundColor Cyan;
-Write-Output "Computer Disk Info";
 
 Get-ciminstance wmimonitorID -namespace root\wmi |
 ForEach-Object {
