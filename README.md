@@ -50,4 +50,4 @@ Installation & Mise a jours de Powershell 7
 
 
                                 
-<a href="https://learn.microsoft.com/fr-fr/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5" rel="nofollow">Installation de PowerShell sur Windows</a>
+<a href="https://learn.microsoft.com/fr-fr/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5" rel="nofollow">Installation de PowerShell sur Windows 7</a>
