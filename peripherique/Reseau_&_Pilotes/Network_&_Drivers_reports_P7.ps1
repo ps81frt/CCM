@@ -25,7 +25,7 @@ New-Item -Path "$env:userprofile\Desktop\Reseau_Pilotes" -Name "Rapport_reseau" 
 
 &{Get-PnpDevice | Select-Object -Property Status,Friendlyname,InstanceId | Format-Table -GroupBy Status ; Get-WmiObject Win32_PnPSignedDriver| Select-Object DeviceName, Manufacturer, DriverVersion ;Get-WmiObject -Class Win32_PnpEntity -ComputerName localhost -Namespace Root\CIMV2 | Where-Object {$_.ConfigManagerErrorCode -gt 0 } | Select-Object ConfigManagerErrorCode,Errortext,Present,Status,StatusInfo,caption | Format-List -GroupBy Status  } | Out-File "$env:USERPROFILE\Desktop\Reseau_Pilotes\Pilotes\Pilotes.txt"
 
-Compress-Archive -Path "$env:userprofile\Desktop\Reseau_Pilotes" -DestinationPath "$env:userprofile\Desktop\Reseau_Pilotes.zip" -Update
+Compress-Archive -Path "$env:userprofile\Desktop\Reseau_Pilotes" -DestinationPath "$env:userprofile\Desktop\Reseau_Pilotes.zip" -Force
 Remove-Item "$env:userprofile\Desktop\Reseau_Pilotes" -Recurse
 Write-Host "Exportation des taches Terminer !!!." -ForegroundColor Green
 Write-Host ""
