@@ -1,3 +1,10 @@
+# Ce script s execute avec powershell 5.1.xxx
+# pour verifier quelle version vous utiliser executer:
+# 
+#       $PSVersionTable
+
+
+
 New-Item -Path "$env:userprofile\Desktop\" -Name "Diag_result" -ItemType Directory ;
 New-Item -Path "$env:userprofile\Desktop\Diag_result\" -Name "Application" -ItemType Directory ;
 New-Item -Path "$env:userprofile\Desktop\Diag_result\" -Name "Systeme" -ItemType Directory ;
@@ -33,7 +40,15 @@ Write-Host "100 dernier evenement du journal system" ;
 Get-WinEvent -LogName System  -MaxEvents 100 | Select-Object TimeCreated,UserId,ContainerLog,ID,Level,Message,ProviderName,MachineName,TaskDisplayName,ProcessId,RecordId,Version,Task,Keywords | Format-List | Out-File -FilePath $env:USERPROFILE\Desktop\Diag_result\Systeme\eventsystem2.txt ;
 Get-EventLog -LogName System  -After (Get-Date).AddDays(-4) -EntryType Error, Warning | Select-Object -First 100 | Format-List | Out-File -FilePath $env:USERPROFILE\Desktop\Diag_result\Systeme\eventsystem.txt
 
-# Périphérique
+# Périphérique:
+#
+# Si rien ne s affiche dans le repertoire peripherique active le dans la gestion de groupe
+# ou executer ces commande dans un terminal Administrateur.
+#
+#	auditpol /set /subcategory:"Événements Plug-and-Play" /success:enable
+#	auditpol /set /option:CrashOnAuditFail /value:enable
+
+
 
 & ".\peripherique\event_periph.ps1" 
 

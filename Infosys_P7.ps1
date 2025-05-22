@@ -1,3 +1,10 @@
+# Ce script s execute avec powershell 7
+# pour verifier quelle version vous utiliser executer:
+# 
+#       $PSVersionTable
+
+
+
 ############ FUNCTION
 # Art
 Function Get-WindowsArt()
