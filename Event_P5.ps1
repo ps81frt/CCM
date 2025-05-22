@@ -35,6 +35,6 @@ Get-EventLog -LogName System  -After (Get-Date).AddDays(-4) -EntryType Error, Wa
 
 # Backup:
 
-Compress-Archive -Path "$env:userprofile\desktop\Diag" -DestinationPath "$env:userprofile\desktop\Diag_result.zip" -Update
+Compress-Archive -Path "$env:userprofile\desktop\Diag_result" -DestinationPath "$env:userprofile\desktop\Diag_result.zip" -Update
 Remove-Item $env:userprofile\desktop\Diag_result -Recurse
 
