@@ -26,11 +26,17 @@
 ## Le script Event.ps1 doit se lancer via Powershell 5 eclui installé par defaut dans windows
 >------------------------------------------------------------------------------------------------------------------------------------------
 
+                        DOSSIER DIAG SUR LE BUREAU
+                        Format Zip
 *
 *
 
 ## Le Script Infosys.ps1 doit se lancer avec powershell 7 s'il n'est pas encore installé je vous invite a le faire.
 >------------------------------------------------------------------------------------------------------------------------------------------
+
+                        DOSSIER INFOSYS SUR LE BUREAU
+                        Format Zip
+
 
 Installation & Mise a jours de Powershell 7
 >------------------------------------------------------------------------------------------------------------------------------------------
