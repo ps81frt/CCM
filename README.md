@@ -1,10 +1,17 @@
 # CCM
 >------------------------------------------------------------------------------------------------------------------------------------------
 
+Avant le lancer les script il vous faudra les authoriser.
+
+            set-executionpolicy unrestricted
+*
+*
 
 ## Le script Event.ps1 doit se lancer via Powershell 5 eclui installé par defaut dans windows
 >------------------------------------------------------------------------------------------------------------------------------------------
 
+*
+*
 
 ## Le Script Infosys.ps1 doit se lancer avec powershell 7 s'il n'est pas encore installé je vous invite a le faire.
 >------------------------------------------------------------------------------------------------------------------------------------------
