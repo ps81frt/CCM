@@ -14,20 +14,21 @@ Get-PhysicalDisk ;
 wmic /namespace:\\root\wmi path MSStorageDriver_FailurePredictStatus ; 
 wmic startup get caption,command ; Get-WmiObject win32_service | where { $_.Caption -notmatch "Microsoft" -and $_.PathName -notmatch "Windows" } | Select-Object Name,Startmode,State,Status,ExitCode,ProcessId,DisplayName | Sort-Object -Property @{Expression = "Name" } |ft } | Out-File -Width 4096  $env:USERPROFILE\desktop\Diag\CONFIG_System.txt ;
 
-# Apllication:
+# Application:
 
 Get-WinEvent -LogName Application -MaxEvents 1000 -Verbose | Where { $_.ID -eq 1000 } | Format-List  TimeCreated, AppName,  ProviderName, Id, Message | Out-File $env:userprofile\Desktop\Diag\Application\apli_1000.txt ;
 Get-WinEvent -LogName Application -MaxEvents 1000 -Verbose | Where { $_.ID -eq 1001 } | Format-List  TimeCreated, AppName,  ProviderName, Id, Message | Out-File $env:userprofile\Desktop\Diag\Application\apli_1001.txt ;
 Get-WinEvent -LogName Application -MaxEvents 1000 -Verbose | Where { $_.ID -eq 1005 } | Format-List  TimeCreated, AppName,  ProviderName, Id, Message | Out-File $env:userprofile\Desktop\Diag\Application\apli_1005.txt ;
 Get-WinEvent -LogName Application -MaxEvents 1000 -Verbose | Where { $_.ID -eq 1026 } | Format-List  TimeCreated, AppName,  ProviderName, Id, Message | Out-File $env:userprofile\Desktop\Diag\Application\apli_1026.txt ;
 
-# Event Apllications installer:
+# Event Applications installer:
 
 Get-WinEvent -FilterHashtable @{ LogName = "Application"; ID = 1033 } | Select timecreated,level,message | Select -First 140 | Format-List | Out-File $env:userprofile\Desktop\Diag\Application\LogAppliInstaller_1033.txt ;
 
 # Système:
 
-Write-Host "100 dernier evenement du journal system" ; Get-WinEvent -LogName System  -MaxEvents 100 | Select-Object TimeCreated,UserId,ContainerLog,ID,Level,Message,ProviderName,MachineName,TaskDisplayName,ProcessId,RecordId,Version,Task,Keywords | fl| fl | Out-File -FilePath $env:USERPROFILE\Desktop\Diag\Systeme\eventsystem2.txt ;
+Write-Host "100 dernier evenement du journal system" ;
+Get-WinEvent -LogName System  -MaxEvents 100 | Select-Object TimeCreated,UserId,ContainerLog,ID,Level,Message,ProviderName,MachineName,TaskDisplayName,ProcessId,RecordId,Version,Task,Keywords | fl| fl | Out-File -FilePath $env:USERPROFILE\Desktop\Diag\Systeme\eventsystem2.txt ;
 Get-EventLog -LogName System  -After (Get-Date).AddDays(-4) -EntryType Error, Warning | Select-Object -First 100 | fl | Out-File -FilePath $env:USERPROFILE\Desktop\Diag\Systeme\eventsystem.txt
 
 # Backup:
