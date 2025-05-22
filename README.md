@@ -18,4 +18,6 @@ Installation & Mise a jours de Powershell 7
         dotnet tool update --global PowerShell
         $PSVersionTable
 
-    
+
+
+                                [Installation de PowerShell sur Windows](https://learn.microsoft.com/fr-fr/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.5)
