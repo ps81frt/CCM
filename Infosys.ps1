@@ -134,12 +134,7 @@ Get-CimInstance -Namespace root\wmi -ClassName WmiMonitorBasicDisplayParams;
 Get-WmiObject win32_videocontroller | Select-Object caption, CurrentHorizontalResolution, CurrentVerticalResolution, MaxRefreshRate, MinRefreshRate, currentrefreshrate
 Start-Sleep -Seconds 2;
 #Writing to Host
-#Writing to Host
-Write-Host "Computer Display Info" -ForegroundColor Cyan
-Write-Output "Computer Display Info"
 
-wmic desktopmonitor get Caption,MonitorType,MonitorManufacturer,Name
-Start-Sleep -Seconds 2
 
 Get-ciminstance wmimonitorID -namespace root\wmi |
 ForEach-Object {
@@ -176,8 +171,14 @@ ForEach-Object {
     }
 }
 Start-Sleep -Seconds 2
-
 #Writing to Host
+Write-Host "Computer Display Info" -ForegroundColor Cyan
+Write-Output "Computer Display Info"
+
+wmic desktopmonitor get Caption,MonitorType,MonitorManufacturer,Name
+Start-Sleep -Seconds 2
+#Writing to Host
+
 Write-Host "Computer Disk Info" -ForegroundColor Cyan
 Write-Output "Computer Disk Info"
 #Display Drives
@@ -256,3 +257,4 @@ Write-Host "Le dossier se trouve sur le bureau" -ForegroundColor Red
 #Clear-Host
 timeout.exe 5
 Exit
+
