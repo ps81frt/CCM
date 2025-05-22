@@ -1,4 +1,4 @@
-New-Item -Path "$env:userprofile\Desktop\" -Name "Diag" -ItemType Directory ;
+New-Item -Path "$env:userprofile\Desktop\" -Name "Diag_result" -ItemType Directory ;
 New-Item -Path "$env:userprofile\Desktop\Diag_result\" -Name "Application" -ItemType Directory ;
 New-Item -Path "$env:userprofile\Desktop\Diag_result\" -Name "Systeme" -ItemType Directory ;
 New-Item -Path "$env:userprofile\Desktop\Diag_result\" -Name "Peripherique" -ItemType Directory ;
