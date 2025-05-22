@@ -33,6 +33,10 @@ Write-Host "100 dernier evenement du journal system" ;
 Get-WinEvent -LogName System  -MaxEvents 100 | Select-Object TimeCreated,UserId,ContainerLog,ID,Level,Message,ProviderName,MachineName,TaskDisplayName,ProcessId,RecordId,Version,Task,Keywords | Format-List | Out-File -FilePath $env:USERPROFILE\Desktop\Diag_result\Systeme\eventsystem2.txt ;
 Get-EventLog -LogName System  -After (Get-Date).AddDays(-4) -EntryType Error, Warning | Select-Object -First 100 | Format-List | Out-File -FilePath $env:USERPROFILE\Desktop\Diag_result\Systeme\eventsystem.txt
 
+# Périphérique
+
+& ".\peripherique\event_periph.ps1" 
+
 # Backup:
 
 Compress-Archive -Path "$env:userprofile\desktop\Diag_result" -DestinationPath "$env:userprofile\desktop\Diag_result.zip" -Update
